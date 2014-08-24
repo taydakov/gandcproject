@@ -42,7 +42,7 @@ names(meanstd_data) <- features$colname
 # Create data set with all the columns inside, remove unused variables
 dataset <- cbind(full_activities, full_subjects, meanstd_data)
 names(dataset)[c(1,2)] <- c("activity", "subject")
-write.csv(dataset, "fulldataset.csv")
+write.csv(dataset, "fulldataset.csv", row.name = FALSE)
 
 # STEP 5
 ## Creating new data set with the average of each variable for each activity and each subject by melting and then casting it
@@ -55,4 +55,4 @@ datasetcasted <- dcast(datasetmelted, activity + subject ~ variable, mean)
 ## The casted data set contains 180 observations (30 subjects by 6 different activities) and 81 columns
 
 # Export result to a file
-write.table(datasetcasted, file = "result.csv", row.name = FALSE)
+write.table(datasetcasted, file = "result.txt", row.name = FALSE)
