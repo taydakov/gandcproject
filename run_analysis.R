@@ -39,8 +39,8 @@ full_activities <- factor(full_labels, levels=activities$V1, labels=activities$V
 names(full_data) <- features$colname
 
 # Create data set with all the columns inside, remove unused variables
-dataset <- cbind(full_subjects, full_activities, full_data)
-names(dataset)[c(1,2)] <- c("subject", "activity")
+dataset <- cbind(full_activities, full_subjects, full_data)
+names(dataset)[c(1,2)] <- c("activity", "subject")
 rm(list = c("full_labels", "full_subjects", "full_data", "full_activities", "activities"))
 
 # STEP 5
@@ -50,3 +50,6 @@ datasetmelted <- melt(dataset, id=c("activity", "subject"), measure.vars = featu
 ## Cast the melted data set by activity and subject
 datasetcasted <- dcast(datasetmelted, activity + subject ~ variable, mean)
 ## The casted data set contains 180 observations (30 subjects by 6 different activities) and 81 columns
+
+# Export result to a file
+write.csv(datasetcasted, file = "result.csv")
