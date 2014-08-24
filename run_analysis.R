@@ -55,4 +55,4 @@ datasetcasted <- dcast(datasetmelted, activity + subject ~ variable, mean)
 ## The casted data set contains 180 observations (30 subjects by 6 different activities) and 81 columns
 
 # Export result to a file
-write.csv(datasetcasted, file = "result.csv")
+write.table(datasetcasted, file = "result.csv", row.name = FALSE)
