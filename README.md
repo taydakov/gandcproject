@@ -7,6 +7,8 @@ Lev Taydakov
 Here are the data for the project: 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
+The script should be run inside the unzipped original dataset
+
 run_analysis.R
 --------------
 run_analysis.R does the following:
