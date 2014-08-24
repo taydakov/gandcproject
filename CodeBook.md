@@ -19,8 +19,8 @@ Then training data and test data were put together and mean was calculated for e
 
 Variables:
 ==========
- - "activity" represents types of activity that subject performed
- - "subject" represent number of subject that performed current activity and produced set of observations
+ - "activity" represents types of activity that subject performed (units: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+ - "subject" represent number of subject that performed current activity and produced set of observations (units: from 1 through 30 - the number of participant)
  - ... others columns are described in a codebook of the original dataset
 
 Steps performed:
