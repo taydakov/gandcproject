@@ -25,31 +25,29 @@ Variables:
 
 Steps performed:
 ================
-# STEP 1
-## Load test and train data
-## Merge test and train data together
-## Also convert some data.frames to vectors
+STEP 1
+Load test and train data
+Merge test and train data together
+Also convert some data.frames to vectors
 
-# STEP 2
-## Read features list and leave only columns with names contains "mean()" and "std()"
+STEP 2
+Read features list and leave only columns with names contains "mean()" and "std()"
 
-# STEP 3
-## Read activity labels and map full_labels using factor
+STEP 3
+Read activity labels and map full_labels using factor
 
-# STEP 4
-## Use feature labels to name columns of the data set
+STEP 4
+Use feature labels to name columns of the data set
 
-# Create data set with all the columns inside, remove unused variables
+Create data set with all the columns inside, remove unused variables
 
-# STEP 5
-## Creating new data set with the average of each variable for each activity and each subject by melting and then casting it
-## Melt the data set by all the columns except activity and subject
-## Cast the melted data set by activity and subject
-## The casted data set contains 180 observations (30 subjects by 6 different activities) and 81 columns
+STEP 5
+Creating new data set with the average of each variable for each activity and each subject by melting and then casting it
+Melt the data set by all the columns except activity and subject
+Cast the melted data set by activity and subject
+The casted data set contains 180 observations (30 subjects by 6 different activities) and 81 columns
 
-# Export result to a file
-write.csv(datasetcasted, file = "result.csv")
-
+Export result to a file
 
 License of the original dataset:
 ================================
