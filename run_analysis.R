@@ -22,7 +22,11 @@ features <- read.table("features.txt", colClasses = "character")
 full_data <- full_data[, features$V1[grep("(mean)|(std)\\(\\)", features$V2)]]
 
 # STEP 3
-## Read activity labels
+## Read activity labels and map full_labels using factor
 activities <- read.table("activity_labels.txt", colClasses = c("numeric", "character"))
 full_activities <- factor(full_labels, levels=activities$V1, labels=activities$V2)
+
+# STEP 4
+## Use feature labels to name columns of the data set
+names(full_data) <- features$V2[grep("(mean)|(std)\\(\\)", features$V2)]
 
