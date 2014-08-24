@@ -13,3 +13,8 @@ full_data     <- rbind(test_data,     train_data)
 
 # Remove unused variables
 rm(list = c("test_labels", "test_subjects", "test_data", "train_labels", "train_subjects", "train_data"))
+
+# Read features list and leave only mean and std columns
+features <- read.table("features.txt", colClasses = "character")$V2
+full_data <- full_data[, grep("(mean)|(std)\\(\\)", features)]
+
